@@ -1,0 +1,66 @@
+.header {
+  background-color: #15cfe4;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.subheader {
+  background-color: #15cfe4;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  font-family: "Times New Roman", Times, serif;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.image {
+  background-color: #15cfe4;
+  display: block;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.white-text {
+  color: rgb(240, 240, 240);
+}
+
+body {
+  background-color: #03a9f4;
+}
+
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.italics {
+  font-style: italic;
+}
+
+figcaption{
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+ul li{
+  margin-bottom: 10px;
+}
+
+footer {
+}
