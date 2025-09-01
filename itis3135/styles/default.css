@@ -1,25 +1,17 @@
-.header {
+.header, .subheader {
   background-color: #15cfe4;
   color: black;
   text-align: center;
   padding: 10px;
   font-family: "Times New Roman", Times, serif;
-  display: inline-block;
   border: 2px solid black;
   border-radius: 10px;
-  
+  /* key parts */
+  display: block;        /* treat heading as a block element */
+  width: fit-content;    /* shrink box to content width */
+  margin: 10px auto;     /* auto margins center it horizontally */
 }
 
-.subheader {
-  background-color: #15cfe4;
-  color: black;
-  text-align: center;
-  padding: 5px;
-  font-family: "Times New Roman", Times, serif;
-  display: inline-block;
-  border: 2px solid black;
-  border-radius: 10px;
-}
 
 .image {
   background-color: #15cfe4;
@@ -39,6 +31,20 @@ body {
   background-color: #03a9f4;
 }
 
+a{
+  color: #FFC107;
+  text-decoration: none;
+  
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  text-align: center;
+  margin: 10px 0;
+}
 .center-img {
   display: block;
   margin-left: auto;
@@ -64,4 +70,5 @@ ul li{
 }
 
 footer {
+  text-align: center;
 }
