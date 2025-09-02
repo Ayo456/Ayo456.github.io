@@ -1,17 +1,21 @@
-.header, .subheader {
+.header,
+.subheader {
   background-color: #15cfe4;
   color: black;
   text-align: center;
   padding: 10px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Montserrat", sans-serif;
   border: 2px solid black;
   border-radius: 10px;
   /* key parts */
-  display: block;        /* treat heading as a block element */
-  width: fit-content;    /* shrink box to content width */
-  margin: 10px auto;     /* auto margins center it horizontally */
+  display: block; /* treat heading as a block element */
+  width: fit-content; /* shrink box to content width */
+  margin: 10px auto; /* auto margins center it horizontally */
 }
 
+p {
+  font-family: "Lato", sans-serif;
+}
 
 .image {
   background-color: #15cfe4;
@@ -31,10 +35,9 @@ body {
   background-color: #03a9f4;
 }
 
-a{
-  color: #FFC107;
+a {
+  color: #ffc107;
   text-decoration: none;
-  
 }
 
 a:hover {
@@ -59,13 +62,13 @@ nav {
   font-style: italic;
 }
 
-figcaption{
+figcaption {
   text-align: center;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Lato", Times, serif;
   font-style: italic;
 }
 
-ul li{
+ul li {
   margin-bottom: 10px;
 }
 
