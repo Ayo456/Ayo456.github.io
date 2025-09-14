@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Onamade Studios — Clean code. Clear design.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+
+  <!-- Coolors palette used:
+       https://coolors.co/a85751-5aa9e6-415a77-c3b299-1b998b
+  -->
+
+  <style>
+    /* Color palette */
+    :root{
+      --bg: #415a77;        /* slate (background) */
+      --text: #f8fafc;      /* near-white for contrast */
+      --muted: #e5d3b3;     /* tan, for secondary text */
+      --accent: #00b4f8;    /* blue, links and h2 */
+      --accent-2: #1b998b;  /* teal, highlights */
+      --accent-3: #ffd0c7;  /* brick, bullet marker */
+      --card: #1e293b;      /* dark card backdrop */
+      --border: #132235;    /* subtle borders */
+    }
+
+    /* Base */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body{
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: radial-gradient(1200px 600px at 20% 0%, #213148 0%, var(--bg) 60%);
+    min-height: 100vh;
+    }
+
+    
+    .container{max-width: 980px; margin: 0 auto; padding: 24px;}
+
+    /* Header */
+    header{
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(90,169,230,0.10), transparent);
+    }
+    
+    .brand{display:flex; align-items:center; gap:16px;}
+    .brand img{display:block; border-radius: 12px;}
+    
+    h1{
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: .2px;
+    }
+    
+    .tagline{margin-top:4px; color: var(--muted); font-size:.95rem;}
+
+    /* Main */
+    main{padding-block: 28px 40px;}
+    h2{
+      margin: 0 0 12px 0;
+      font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+      color: var(--accent);
+    }
+    p{margin: 0 0 16px 0}
+
+    /* Features: custom non-standard bullets */
+    .features{
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+    
+    .features li{
+      position: relative;
+      padding-left: 1.6rem;
+      margin: 10px 0;
+      background: linear-gradient(90deg, rgba(27,153,139,0.10), rgba(27,153,139,0));
+      border-left: 3px solid var(--accent-2);
+      border-radius: 10px;
+      padding-block: 8px;
+      padding-right: 10px;
+    }
+    
+    .features li::before{
+      content: "▹";
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 700;
+      color: var(--accent-3);
+    }
+
+    /* Contact block */
+    address{
+      font-style: normal;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      line-height: 1.7;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+    }
+    address b{color: var(--accent)}
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, transparent, rgba(19,34,53,0.6));
+    }
+    .footgrid{
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+    
+    nav a{
+      color: var(--muted);
+      text-decoration: none;
+      margin-right: 16px;
+
+    }
+   
+    nav a:hover{ color: var(--accent) }
+   
+    .validators a{
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 14px;
+      font-size: 0.95rem;
+    }
+    .validators a:hover{ color: var(--accent) }
+    .copyright{
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+
+    a{
+        color: var(--accent);
+    }
+
+    .main-nav{
+    margin-top: 24px;   /* adds spacing below logo/brand */
+    display: inline-flex;
+    gap: 32px;
+    }
+
+  </style>
+</head>
+
+<body id="top">
+  <header>
+  <div class="container">
+    <div class="brand">
+      <img src="../images/onamade-studios.png" width="96" height="96" alt="Onamade Studios Logo">
+      <div>
+        <h1>Onamade Studios</h1>
+        <div class="tagline">Clean code. Clear design.</div>
+      </div>
+    </div>
+    
+
+    <nav class="main-nav" aria-label="main">
+      <a href="#top">Home</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="container">
+    <h2>Onamade Studios Services</h2>
+
+    <p>
+      Onamade Studios crafts fast, accessible websites and polished digital visuals.
+      We combine modern web design with brand-forward graphic design to deliver clean interfaces,
+      clear messaging, and reliable performance.
+    </p>
+    <p>
+      Whether you need a sleek landing page or a complete visual refresh, we design with intent
+      and build with care so your ideas feel as good as they look.
+    </p>
+
+    <ul class="features">
+      <li>Responsive web design built on semantic, SEO-friendly HTML</li>
+      <li>Digital design systems, brand kits, and typography pairing</li>
+      <li>Accessibility-first approach aligned with WCAG 2.2 AA</li>
+      <li>Performance tuning and Lighthouse/Core Web Vitals optimization</li>
+      <li>Figma-to-code handoff with clear documentation</li>
+      <li>Graphic assets, iconography, and lightweight illustrations</li>
+      <li>Prototyping for quick feedback and iteration</li>
+      <li>CMS-ready structures for easy content updates</li>
+    </ul>
+
+    <p>
+      Friendly, collaborative, and practical—we’ll meet you where you are and map a plan that fits your
+      goals and constraints. Let’s make something you’re proud to ship.
+    </p>
+
+    <address>
+      <b>Contact</b>
+      <br>Email: hello@onamadestudios.com<br>
+      Phone: (704) 555-0137<br>
+      Address: 1234 Mint St, Suite 3135, Charlotte, NC 28202
+    </address>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footgrid">
+        <nav aria-label="Footer">
+          <a href="#top">Home</a>
+        </nav>
+
+        <div class="validators">
+          <a id="v-html" href="#" rel="noopener" target="_blank">Validate HTML</a>
+          <a id="v-css" href="#" rel="noopener" target="_blank">Validate CSS</a>
+        </div>
+      </div>
+
+      <div class="copyright">© <span id="year"></span> <a href="index.html">Onamade Studios</a> — Clean code. Clear design.</div>
+    </div>
+
+    <script>
+      (function(){
+        const url = encodeURIComponent(window.location.href);
+        document.getElementById('v-html').href =
+          'https://validator.w3.org/nu/?doc=' + url;
+        document.getElementById('v-css').href  =
+          'https://jigsaw.w3.org/css-validator/validator?profile=css3svg&warning=1&uri=' + url;
+        document.getElementById('year').textContent = new Date().getFullYear();
+      }());
+    </script>
+  </footer>
+</body>
+</html>
