@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Evaluations - ITIS 3135 - Emmanuel Onamade</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+
+    <main class="white-text">
+        <h2 class="header">Website Evaluations</h2>
+        <p class="center-text">An analysis of two websites using CRAP design principles: Contrast, Repetition, Alignment, and Proximity.</p>
+
+        <section class="good-website">
+            <h3><a href="https://www.apple.com" target="_blank">Apple.com</a></h3>
+            <p>Apple's website is a masterclass in minimalist design and visual hierarchy. The site showcases their products with stunning imagery, clean layouts, and intuitive navigation. Each page maintains consistency while highlighting new products and features effectively.</p>
+            
+            <ul>
+                <li><strong>Contrast:</strong> Apple excels at using contrast through large, high-quality product images against clean white or black backgrounds. Typography contrasts effectively with bold headlines and subtle body text. Color is used strategically to draw attention to call-to-action buttons and key products.</li>
+                
+                <li><strong>Repetition:</strong> The site demonstrates excellent repetition with consistent typography, spacing, and layout patterns across all pages. Navigation elements, button styles, and product card layouts are uniform throughout, creating a cohesive brand experience. The same design language is repeated across different product categories.</li>
+                
+                <li><strong>Alignment:</strong> Everything on Apple's site is precisely aligned, creating a sense of order and professionalism. Text, images, and buttons follow strict grid systems. Left and center alignment are used purposefully to guide the user's eye down the page in a logical flow.</li>
+                
+                <li><strong>Proximity:</strong> Related information is grouped together effectively. Product specifications are clustered near product images, navigation items are grouped logically, and content sections have clear separation through generous white space. This makes the site easy to scan and understand quickly.</li>
+            </ul>
+        </section>
+
+        <section class="bad-website">
+            <h3><a href="https://www.lingscars.com" target="_blank">Ling's Cars</a></h3>
+            <p>Ling's Cars is a UK car leasing website that deliberately breaks nearly every design convention. While intentionally chaotic for brand recognition, it serves as an excellent example of what happens when CRAP principles are ignored. The site is overwhelming with flashing elements, competing colors, and cluttered layouts.</p>
+            
+            <ul>
+                <li><strong>Contrast:</strong> The site has excessive and poorly implemented contrast with too many competing bright colors, flashing animations, and varied font sizes all fighting for attention. Nothing stands out because everything is trying to stand out. The overuse of bright colors against busy backgrounds makes text difficult to read.</li>
+                
+                <li><strong>Repetition:</strong> There is little consistency across pages, with different color schemes, layouts, and design elements appearing randomly. Font styles, sizes, and colors change without purpose. While some repetitive elements exist (like the mascot character), they don't create unity but rather add to the visual chaos.</li>
+                
+                <li><strong>Alignment:</strong> Elements are scattered across the page without clear alignment to a grid system. Text boxes, images, and buttons appear to be placed randomly, creating a disorganized appearance. The lack of alignment makes it difficult to follow any visual path through the content.</li>
+                
+                <li><strong>Proximity:</strong> Related information is not grouped effectively. Navigation elements are spread out, product information mixes with unrelated content, and there's insufficient white space to separate different sections. Users must work hard to find related information because nothing is logically grouped together.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="white-text">
+      <div data-include="components/footer.html"></div>
+    </footer>
+
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script>
+      document
+        .getElementById("validation_link_html")
+        .setAttribute(
+          "href",
+          "https://validator.w3.org/check?uri=" + location.href
+        );
+      document
+        .getElementById("validation_link_css")
+        .setAttribute(
+          "href",
+          "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href
+        );
+    </script>
+</body>
+</html>
