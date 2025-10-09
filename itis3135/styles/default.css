@@ -1,3 +1,10 @@
+/* foundation styles */
+main {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .header,
 .subheader {
   background-color: #15cfe4;
@@ -7,10 +14,9 @@
   font-family: "Montserrat", sans-serif;
   border: 2px solid black;
   border-radius: 10px;
-  /* key parts */
-  display: block; /* treat heading as a block element */
-  width: fit-content; /* shrink box to content width */
-  margin: 10px auto; /* auto margins center it horizontally */
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
 }
 
 p {
@@ -48,6 +54,7 @@ nav {
   text-align: center;
   margin: 10px 0;
 }
+
 .center-img {
   display: block;
   margin-left: auto;
@@ -74,4 +81,61 @@ ul li {
 
 footer {
   text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+/* Desktop/Laptop Devices (981px - 1400px) */
+@media screen and (min-width: 981px) and (max-width: 1400px) {
+  main {
+    width: 85%;
+  }
+  
+  .header,
+  .subheader {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablet Devices (601px - 980px) */
+@media screen and (min-width: 601px) and (max-width: 980px) {
+  main {
+    width: 92%;
+  }
+  
+  .header,
+  .subheader {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+  
+  nav {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Devices (370px - 600px) */
+@media screen and (min-width: 370px) and (max-width: 600px) {
+  main {
+    width: 95%;
+  }
+  
+  .header,
+  .subheader {
+    font-size: 1.2rem;
+    padding: 6px;
+    margin: 8px auto;
+  }
+  
+  nav {
+    font-size: 0.9rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+  
+  ul li {
+    margin-bottom: 8px;
+  }
 }
