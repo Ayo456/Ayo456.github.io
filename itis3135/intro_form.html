@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmanuel Onamade's BYO Intro Form</title>
+    <link rel="stylesheet" href="styles/default.css" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      fieldset {
+        border-radius: 20px;
+        margin-bottom: 15px;
+        border: 6px solid #ffc107;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+    <main class="white-text">
+      <h2 class="header">Build Your Own Introduction Form</h2>
+      <h3 class="subheader">Please submit the form below.</h3>
+      <form>
+        <fieldset class="center-text">
+          <legend class="header">Your Name</legend>
+
+          <label for="firstname"> First Name: </label>
+          <input type="text" id="firstname" name="name" placeholder="First Name" value="Emmanuel" required/>
+
+          <label for="middlename"> Middle Name/Initial: </label>
+          <input type="text" id="middlename" name="middlename" placeholder="Middle Name" value="Ayodeji"/>
+
+          <label for="lastname"> Last Name: </label>
+          <input type="text" id="lastname" name="lastname" placeholder="Last Name" value="Onamade" required/>
+
+          <label for="pname"> Preffered Name: </label>
+          <input type="text" id="pname" name="pname" placeholder="Preferred Name"/>
+        </fieldset>
+
+        <fieldset class="center-text">
+          <legend class="header">Acknowledgement</legend>
+
+          <label for="acknowledgement"
+            >"I acknowledge that the information I present here is
+            public."</label
+          >
+          <input
+            type="checkbox"
+            id="acknowledgement"
+            name="acknowledgement"
+            required
+          />
+
+          <label for="initials"> Please type your initials to confirm: </label>
+          <input
+            type="text"
+            id="initials"
+            name="initials"
+            placeholder="Type your initials here"
+            value="E.O"
+            required
+          />
+
+          <label for="date"> Date: </label>
+          <input type="date" id="date" name="date" required />
+        </fieldset>
+
+        <fieldset class="center-text">
+          <legend class="header">Make Your Mascot</legend>
+
+          <label for="mascotadjective">Mascot Adjective: </label>
+          <input
+            type="text"
+            id="mascotadjective"
+            name="mascotadjective"
+            placeholder="Adjective"
+            value="Eccentric"
+            required
+          />
+
+          <label for="mascot">Mascot Animal: </label>
+          <input
+            type="text"
+            id="mascotanimal"
+            name="mascotanimal"
+            placeholder="Animal"
+            value="Eagle"
+            required
+          />
+
+          <label for="divider">Divider: </label>
+          <input
+            type="text"
+            id="divider"
+            name="divider"
+            placeholder="Divider"
+            value="||"
+            required
+          />
+        </fieldset>
+
+        <fieldset class="center-text">
+          <legend class="header">Picture Information</legend>
+          
+          <label>Add image: </label>
+          <input type="file" name="file" id="introImage" required />
+          <button type="button" onclick="loadImage()">Click Here to Load</button>
+          <div id="loadImage">
+            <img src="images/Eman-Winter.jpg" alt="Default profile" style="max-width: 300px; margin-top: 10px"/>
+          </div>
+          
+          <label for="imageCaption">Image Caption: </label>
+          
+          <input id="imageCaption" name="imageCaption" type="text" placeholder="Enter Image Caption" value="Picture of Me" required/>
+        </fieldset>
+
+        <fieldset class="center-text">
+          <legend class="header">Personal Statement</legend>
+          <label for="personalStatement">Personal Statement: </label>
+          <input id="personalStatement" name="personalStatement" type="text" placeholder="Enter your personal statement"  style="width: 80%;"
+          value="I’m now a Junior in Computer Science with a concentration in Data Science here at UNCC. My hobbies include gaming, physical activities, and binging shows. I usually keep to myself, but I can be very extraverted around the right people and during the right times." 
+          required/>
+        </fieldset>
+
+        <fieldset class="center-text">
+          <legend class="header">Background Information</legend>
+          <label for="personalBackground">Personal Background: </label>
+          <input id="personalBackground" name="personalBackground" type="text" placeholder="Enter your personal background" value="Born in Maryland, raised in West Virginia in my early childhood, then moved to North Carolina in 2012 and have lived here ever since." style="width: 80%;" required ><br>
+
+          <label for="professionalBackground">Professional Background: </label>
+          <input id="professionalBackground" name="professionalBackground" type="text" placeholder="Enter your professional background" value="Was a Summer Intern for NAF in 2023." style="width: 80%;" required><br>
+
+          <label for="academicBackground">Academic Background: </label>
+          <input id="academicBackground" name="academicBackground" type="text" placeholder="Enter your academic background" value="I am a Junior majoring in Computer Science with a concentration in Data Science." style="width: 80%;" required><br>
+
+          <label for="primaryComputer">Primary Computer: </label>
+          <input id="primaryComputer" name="primaryComputer" type="text" placeholder="Enter your primary computer, OS system, type, and location" value=" HP VICTUS, Windows, Laptop. The primary working location is my bedroom desk." style="width: 80%;" required>
+
+          <div></div>
+          <label for="SubjectBackground">Background in this Subject: </label>
+          <input id="SubjectBackground" name="SubjectBackground" type="text" placeholder="Enter your background in this subject" value="I was a Front-End Developer on a project for my Software Engineering course, so I had some previous experience with HTML and CSS." style="width: 80%;" required><br>
+      </fieldset>
+
+      <fieldset class="center-text">
+        <legend class="header">Course Information</legend>
+        <ul id="courseList"></ul>
+        <button type="button" onClick="addCourse()">Add Course</button>
+      </fieldset>
+
+      <fieldset class="center-text">
+        <legend class="header">Quote Information</legend>
+        <label for="quote">Quote: </label>
+        <input id="quote" name="quote" type="text" placeholder="Enter a quote" value="There's no such thing as a painless lesson. They just don't exist. Sacrifices are necessary. You can't gain anything without losing something first. But if you learn to endure that pain, you'll find you've gained a heart strong enough to endure anything" style="width:50%;" required>
+        <label for="quoteAuthor">Quote Author: </label>
+        <input id="quoteAuthor" name="quoteAuthor" type="text" placeholder="Enter who said your quote" style="width:300px;" value="Edward Elric, Fullmetal Alchemist: Brotherhood" required>
+      </fieldset>
+
+      <fieldset class="center-text">
+        <legend class="header">Optional Information</legend>
+        <label for="funny">Something Funny To Remember Me: </label>
+        <input id="funny" name="funny" type="text" placeholder="Enter something funny you'd like to share" style="width: 400px;;">
+        <br>
+        <label for="share">Something I'd Like to Share: </label>
+        <input id="share" name="share" type="text" placeholder="Enter something you'd like to share" style="width: 400px;">
+      </fieldset>
+
+      <fieldset class="center-text">
+        <legend class="header">Link Information</legend>
+        <label for="cltWeb">CLT Web</label>
+        <input id="cltWeb" name="cltWeb" type="url" placeholder="Enter your CLT Website link" value="https://webpages.charlotte.edu/eonamade" required>
+        <label for="github">GitHub</label>
+        <input id="github" name="github" type="url" placeholder="Enter your GitHub link" value="https://github.com/Ayo456" required>
+        <label for="githubIo">GitHub.io</label>
+        <input id="githubIo" name="githubIo" type="url" placeholder="Enter your GitHub.io site" value="https://ayo456.github.io" required>
+        <label for="freeCodeCamp">freeCodeCamp</label>
+        <input id="freeCodeCamp" name="freeCodeCamp" type="url" placeholder="Enter your freeCodeCamp link" value="https://www.freecodecamp.org/eonamade-charlotte" required>
+        <br>
+        <label for="codecademy">Codecademy</label>
+        <input id="codecademy" name="codecademy" type="url" placeholder="Enter your Codecademy link" value="https://www.codecademy.com/profiles/EmanO456" required>
+        <label for="linkedIn">LinkedIn</label>
+        <input id="linkedIn" name="linkedIn" type="url" placeholder="Enter your LinkedIn link" value="https://www.linkedin.com/in/emmanuel-onamade-602632281" required>
+      </fieldset>
+      
+      <fieldset style="text-align:center;">
+        <button type="submit" style="display:inline-block; margin:0 8px;">Submit</button>
+        <button type="reset" style="display:inline-block; margin:0 8px;">Reset</button>
+        <button type="button" id="clear" style="display:inline-block; margin:0 8px;">Clear</button>
+      </fieldset>
+ 
+
+      </form>
+    </main>
+    <footer class="white-text">
+      <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/introductions.js"></script>
+  </body>
+</html>
