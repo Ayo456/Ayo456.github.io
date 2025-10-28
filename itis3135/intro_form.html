@@ -24,7 +24,7 @@
     </header>
     <main class="white-text">
       <h2 class="header">Build Your Own Introduction Form</h2>
-      <h3 class="subheader">Please submit the form below.</h3>
+      <h3 class="subheader">Please submit the form below</h3>
       <form>
         <fieldset class="center-text">
           <legend class="header">Your Name</legend>
@@ -42,33 +42,6 @@
           <input type="text" id="pname" name="pname" placeholder="Preferred Name"/>
         </fieldset>
 
-        <fieldset class="center-text">
-          <legend class="header">Acknowledgement</legend>
-
-          <label for="acknowledgement"
-            >"I acknowledge that the information I present here is
-            public."</label
-          >
-          <input
-            type="checkbox"
-            id="acknowledgement"
-            name="acknowledgement"
-            required
-          />
-
-          <label for="initials"> Please type your initials to confirm: </label>
-          <input
-            type="text"
-            id="initials"
-            name="initials"
-            placeholder="Type your initials here"
-            value="E.O"
-            required
-          />
-
-          <label for="date"> Date: </label>
-          <input type="date" id="date" name="date" required />
-        </fieldset>
 
         <fieldset class="center-text">
           <legend class="header">Make Your Mascot</legend>
@@ -83,7 +56,7 @@
             required
           />
 
-          <label for="mascot">Mascot Animal: </label>
+          <label for="mascotanimal">Mascot Animal: </label>
           <input
             type="text"
             id="mascotanimal"
@@ -108,7 +81,7 @@
           <legend class="header">Picture Information</legend>
           
           <label>Add image: </label>
-          <input type="file" name="file" id="introImage" required />
+          <input type="file" name="file" id="introImage" />
           <button type="button" onclick="loadImage()">Click Here to Load</button>
           <div id="loadImage">
             <img src="images/Eman-Winter.jpg" alt="Default profile" style="max-width: 300px; margin-top: 10px"/>
@@ -169,22 +142,7 @@
         <input id="share" name="share" type="text" placeholder="Enter something you'd like to share" style="width: 400px;">
       </fieldset>
 
-      <fieldset class="center-text">
-        <legend class="header">Link Information</legend>
-        <label for="cltWeb">CLT Web</label>
-        <input id="cltWeb" name="cltWeb" type="url" placeholder="Enter your CLT Website link" value="https://webpages.charlotte.edu/eonamade" required>
-        <label for="github">GitHub</label>
-        <input id="github" name="github" type="url" placeholder="Enter your GitHub link" value="https://github.com/Ayo456" required>
-        <label for="githubIo">GitHub.io</label>
-        <input id="githubIo" name="githubIo" type="url" placeholder="Enter your GitHub.io site" value="https://ayo456.github.io" required>
-        <label for="freeCodeCamp">freeCodeCamp</label>
-        <input id="freeCodeCamp" name="freeCodeCamp" type="url" placeholder="Enter your freeCodeCamp link" value="https://www.freecodecamp.org/eonamade-charlotte" required>
-        <br>
-        <label for="codecademy">Codecademy</label>
-        <input id="codecademy" name="codecademy" type="url" placeholder="Enter your Codecademy link" value="https://www.codecademy.com/profiles/EmanO456" required>
-        <label for="linkedIn">LinkedIn</label>
-        <input id="linkedIn" name="linkedIn" type="url" placeholder="Enter your LinkedIn link" value="https://www.linkedin.com/in/emmanuel-onamade-602632281" required>
-      </fieldset>
+      
       
       <fieldset style="text-align:center;">
         <button type="submit" style="display:inline-block; margin:0 8px;">Submit</button>

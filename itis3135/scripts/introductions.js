@@ -1,26 +1,63 @@
 const formElement = document.querySelector("form");
 let courseCount = 0;
 
-function addCourse() {
+// Prefilled course data from introduction.html
+const defaultCourses = [
+  {
+    dept: "ANTH",
+    number: "1501",
+    name: "Global Social Science (Anthropology)",
+    reason: "Needed a Global Science."
+  },
+  {
+    dept: "ITIS",
+    number: "3135",
+    name: "Front-End Web App Development",
+    reason: "I took it for my concentration but I also love Front-End and want to become more proficient with it."
+  },
+  {
+    dept: "ITSC",
+    number: "1600",
+    name: "Computing Professionals",
+    reason: "I'm a transfer student from an Early College High School, so I need to take it despite my credits."
+  },
+  {
+    dept: "ITSC",
+    number: "3146",
+    name: "Introduction to Operating Systems and Networks",
+    reason: "Needed as a core course for my major"
+  },
+  {
+    dept: "PSYC",
+    number: "1101",
+    name: "General Psychology",
+    reason: "Needed as an Elective course, and have heard good things about the topic in general."
+  }
+];
+
+function addCourse(prefilledData = null) {
   courseCount++;
   const coursesList = document.getElementById('courseList');
   const li = document.createElement('li');
   li.className = 'course-item';
   li.id = `course-${courseCount}`;
   
+  const { dept: deptValue = '', number: numberValue = '', name: nameValue = '', reason: reasonValue = '' } =
+  prefilledData || {};
+  
   li.innerHTML = `
     <div class="course-inputs">
       <label>Department:</label>
-      <input type="text" name="dept-${courseCount}" placeholder="4-digit department code" required>
+      <input type="text" name="dept-${courseCount}" placeholder="4-digit department code" value="${deptValue}" required>
       
       <label>Course Number:</label>
-      <input type="text" name="number-${courseCount}" placeholder="4-digit course number" required>
+      <input type="text" name="number-${courseCount}" placeholder="4-digit course number" value="${numberValue}" required>
       
       <label>Course Name:</label>
-      <input type="text" name="name-${courseCount}" placeholder="Course name" required>
+      <input type="text" name="name-${courseCount}" placeholder="Course name" value="${nameValue}" required>
       
       <label>Reason for Taking:</label>
-      <input name="reason-${courseCount}" type="text" placeholder="Why are you taking this course?" style="width: 400px; height: 20px;" required>
+      <input name="reason-${courseCount}" type="text" placeholder="Why are you taking this course?" style="width: 400px; height: 20px;" value="${reasonValue}" required>
       
       <button type="button" class="remove-btn" onclick="removeCourse(${courseCount})">Delete Course</button>
     </div>
@@ -52,13 +89,11 @@ function resetForm() {
 function generateOutputPage() {
   const formData = new FormData(formElement);
   
-  // Get form data - using the actual id attributes since name attributes conflict
+  // Get form data
   const firstName = document.getElementById('firstname').value;
   const middleName = document.getElementById('middlename').value;
   const lastName = document.getElementById('lastname').value;
   const preferredName = document.getElementById('pname').value;
-  const initials = document.getElementById('initials').value;
-  const date = document.getElementById('date').value;
   const mascotAdjective = document.getElementById('mascotadjective').value;
   const mascotAnimal = document.getElementById('mascotanimal').value;
   const divider = document.getElementById('divider').value;
@@ -73,25 +108,21 @@ function generateOutputPage() {
   const quoteAuthor = document.getElementById('quoteAuthor').value;
   const funny = document.getElementById('funny').value;
   const share = document.getElementById('share').value;
-  const cltWeb = document.getElementById('cltWeb').value;
-  const github = document.getElementById('github').value;
-  const githubIo = document.getElementById('githubIo').value;
-  const freeCodeCamp = document.getElementById('freeCodeCamp').value;
-  const codecademy = document.getElementById('codecademy').value;
-  const linkedIn = document.getElementById('linkedIn').value;
   
-  // Collect courses
+  // Collect courses (if any exist)
   const courses = [];
-  for (let i = 1; i <= courseCount; i++) {
-    const dept = formData.get(`dept-${i}`);
-    const number = formData.get(`number-${i}`);
-    const name = formData.get(`name-${i}`);
-    const reason = formData.get(`reason-${i}`);
+  const courseItems = document.querySelectorAll('.course-item');
+  courseItems.forEach((item) => {
+    const id = item.id.split('-')[1];
+    const dept = formData.get(`dept-${id}`);
+    const number = formData.get(`number-${id}`);
+    const name = formData.get(`name-${id}`);
+    const reason = formData.get(`reason-${id}`);
     
     if (dept && number && name && reason) {
       courses.push({ dept, number, name, reason });
     }
-  }
+  });
   
   // Build courses HTML - exactly matching introduction.html format
   let coursesHTML = '';
@@ -113,7 +144,7 @@ function generateOutputPage() {
   
   // Generate output page matching introduction.html structure EXACTLY
   let outputHTML = `
-      <h2 class="subheader">${firstName}${middleName ? ' ' + middleName : ''} ${lastName} | ${mascotAdjective} ${mascotAnimal}</h2>
+      <h2 class="subheader">${firstName}${middleName ? ' ' + middleName : ''} ${lastName} ${divider} ${mascotAdjective} ${mascotAnimal}</h2>
       ${preferredName ? `<p class="center-text italics white-text">Preferred Name: ${preferredName}</p>` : ''}
       
       <p class="white-text center-text">
@@ -143,10 +174,10 @@ function generateOutputPage() {
           </li>
           <li>
             Primary Computer: ${primaryComputer}
-          </li>
+          </li>${courses.length > 0 ? `
           <li>
             Courses I'm Taking & Why:${coursesHTML}
-          </li>${funny ? `
+          </li>` : ''}${funny ? `
           <li>
             Something Funny to Remember Me: ${funny}
           </li>` : ''}${share ? `
@@ -162,20 +193,6 @@ function generateOutputPage() {
           -${quoteAuthor}
         </p>
       </section>
-      
-      <p class="white-text">I acknowledge that the information I present here is public. - ${initials}</p>
-      <p class="white-text italics">Date: ${date}</p>
-      
-      <nav class="white-text">
-        <a href="${cltWeb}">CLT Web</a> ${divider}
-        <a href="${github}">GitHub</a> ${divider}
-        <a href="${githubIo}">GitHub.io</a> ${divider}
-        <a href="${freeCodeCamp}">freeCodeCamp</a> ${divider}
-        <a href="${codecademy}">Codecademy</a> ${divider}
-        <a href="${linkedIn}">LinkedIn</a> ${divider}
-      </nav>
-      
-      
   `;
   
   // Replace main content
@@ -188,18 +205,16 @@ document.querySelector("#clear").addEventListener("click", function (event) {
   Array.from(document.querySelectorAll("form input")).forEach((input) => {
     input.value = "";
   });
+  // Clear all courses
+  document.getElementById('courseList').innerHTML = '';
+  courseCount = 0;
 });
 
 // Form submit handler
 formElement.addEventListener("submit", function(e) {
   e.preventDefault();
   
-  // Check if at least one course has been added
-  if (courseCount === 0) {
-    alert("Please add at least one course using the 'Add Course' button!");
-    return;
-  }
-  
+  // No longer require courses - allow submission with zero courses
   const requiredFields = formElement.querySelectorAll('[required]');
   let allValid = true;
   
@@ -218,4 +233,11 @@ formElement.addEventListener("submit", function(e) {
   }
   
   generateOutputPage();
+});
+
+window.addEventListener('DOMContentLoaded', function () {
+  // Add all 5 default courses with prefilled data
+  defaultCourses.forEach(function (courseData) {
+    addCourse(courseData);
+  });
 });
