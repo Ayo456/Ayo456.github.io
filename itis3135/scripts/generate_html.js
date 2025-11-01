@@ -154,15 +154,36 @@ function generateHTML() {
     main.appendChild(outputContainer);
   }
 
-  // Display the HTML with syntax highlighting
+  // Display the HTML with syntax highlighting plus a back button
   outputContainer.innerHTML = `
     <section style="margin: 20px 0;">
       <pre style="background: #2d2d2d; padding: 20px; border-radius: 8px; overflow-x: auto;"><code class="language-html">${escapeHtml(htmlCodeString)}</code></pre>
+      <button onclick="backToForm()" style="margin-top: 20px; padding: 10px 20px; cursor: pointer;">Back to Form</button>
     </section>
   `;
 
   // Apply Highlight.js if available
   if (typeof hljs !== 'undefined') {
     hljs.highlightAll();
+  }
+}
+
+function backToForm() {
+  // Restore the H2 heading
+  const heading = document.querySelector('main h2');
+  if (heading) {
+    heading.textContent = 'Build Your Own Introduction Form';
+  }
+
+  // Show the form again
+  const form = document.querySelector('form');
+  if (form) {
+    form.style.display = 'block';
+  }
+
+  // Remove the HTML output container
+  const outputContainer = document.getElementById('html-output');
+  if (outputContainer) {
+    outputContainer.remove();
   }
 }
